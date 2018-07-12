@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-TextView tv;
+    TextView tv;
     String s;
 
     public static final String alpha = "abcdefghijklmnopqrstuvwxyz";
@@ -76,7 +76,6 @@ TextView tv;
             for (int j = 0; j < 4; ++j) {
                 t =  Integer.parseInt(String.valueOf(quo.charAt(k)))*26 + alpha.indexOf(cc.charAt(k)) - Integer.parseInt(String.valueOf(cipher.charAt(j)));
                 p1[i][j]=t;
-               // Log.d("haww", String.valueOf(p1[i][j]));
                 k++;
             }
         }
