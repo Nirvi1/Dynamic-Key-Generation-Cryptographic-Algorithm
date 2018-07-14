@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
     TextView tv;
-    String s;
+    String messageString;
 
     public static final String alpha = "abcdefghijklmnopqrstuvwxyz";
     int inputText[][]  =   new int[16][16];
@@ -29,14 +29,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv=(TextView)findViewById(R.id.hello);
-        s = "bye";
+        messageString = "bye";
         int i=0,j,k,p=0,h=0;
         for(k=0;k<4;k++) {
          for (j = 0; j < 4; j++) {
 
-             if (i<s.length())
+             if (i<messageString.length())
              {
-                 char r=s.charAt(i);
+                 char r=messageString.charAt(i);
 
                  inputText[k][j] = (int)r;
 
@@ -130,23 +130,23 @@ public class MainActivity extends Activity {
 void generateKey()
 {
     int v=0,c=0,d=0,sp=0;
-    for(int i=0;i<s.length();i++) {
-        if (s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o' || s.charAt(i) == 'u' || s.charAt(i) == 'A' || s.charAt(i) == 'E' || s.charAt(i) == 'I' || s.charAt(i) == 'O' || s.charAt(i) == 'U')
+    for(int i=0;i<messageString.length();i++) {
+        if (messageString.charAt(i) == 'a' || messageString.charAt(i) == 'e' || messageString.charAt(i) == 'i' || messageString.charAt(i) == 'o' || messageString.charAt(i) == 'u' || messageString.charAt(i) == 'A' || messageString.charAt(i) == 'E' || messageString.charAt(i) == 'I' || messageString.charAt(i) == 'O' || messageString.charAt(i) == 'U')
             ++v;
-        else if ((s.charAt(i) >= 'a' && s.charAt(i) <= 'z') || (s.charAt(i) >= 'A' && s.charAt(i) <= 'Z'))
+        else if ((messageString.charAt(i) >= 'a' && messageString.charAt(i) <= 'z') || (messageString.charAt(i) >= 'A' && messageString.charAt(i) <= 'Z'))
             ++c;
-        else if (s.charAt(i) >= '0' && c <= '9'|| s.charAt(i) == ' ')
+        else if (messageString.charAt(i) >= '0' && c <= '9'|| messageString.charAt(i) == ' ')
             ++d;
         else
             sp++;
 
     }
-    v   =   s.length()-v;
-    c   =   s.length()-c;
+    v   =   messageString.length()-v;
+    c   =   messageString.length()-c;
 
-    d   =  s.length()-d;
+    d   =  messageString.length()-d;
 
-    sp  = s.length()-sp;
+    sp  = messageString.length()-sp;
     int xor1,xor2,xor3,xor4;
     xor1    =   v^c;
     xor2    =   c^d;
