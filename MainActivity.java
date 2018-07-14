@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
     TextView tv;
-    String messageString;
+    String messageString = "";
 
     public static final String alpha = "abcdefghijklmnopqrstuvwxyz";
     int inputText[][]  =   new int[16][16];
